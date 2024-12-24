@@ -24,4 +24,4 @@ const verifyToken = async (idToken) => {
 module.exports = { verifyToken };
 
 
-module.exports = admin;
+module.exports = {admin, verifyToken};
