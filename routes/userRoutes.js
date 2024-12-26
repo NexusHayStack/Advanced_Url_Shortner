@@ -2,7 +2,7 @@ const express = require("express");
 const Users = require('../models/Users');
 const router = express.Router();
 const handlers = require("../lib/handlers.js");
-const authMiddleware = require('../middlewares/authMiddleware'); // Path to your auth middleware
+const authMiddleware = require('../middleware/authMiddleware'); // Path to your auth middleware
 
 // Public Route
 router.post("/signup", handlers.createUser);

@@ -1,5 +1,6 @@
-const admin = require('firebase-admin');
+// **DOTENV IMPORT SHOULD ALWAYS BE AT TOP!!!!
 require('dotenv').config();
+const admin = require('firebase-admin');
 
 const serviceAccount = require(process.env.FIREBASE_SERVICE_ACCOUNT_KEY); // Replace with your actual path
 
