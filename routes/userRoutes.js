@@ -9,11 +9,10 @@ router.post("/signup", handlers.createUser);
 
 // Secure Routes
 router.get('/:id', authMiddleware, handlers.getUser);
+// Update a User
+router.put("/:id", authMiddleware, handlers.updateUser);
 
 /*
-// Update a User
-router.put("/:id", updateUser);
-
 router.delete("/:id", deleteUser);
 */
 
