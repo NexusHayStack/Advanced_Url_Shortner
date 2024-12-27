@@ -11,9 +11,8 @@ router.post("/signup", handlers.createUser);
 router.get('/:id', authMiddleware, handlers.getUser);
 // Update a User
 router.put("/:id", authMiddleware, handlers.updateUser);
+// Delete User
+router.delete("/:id", authMiddleware, handlers.deleteUser);
 
-/*
-router.delete("/:id", deleteUser);
-*/
 
 module.exports = router;
