@@ -1,6 +1,6 @@
-const express = require('express')
-var server = require('./lib/server');
-const connectDB = require('./lib/database');
+import express from 'express';
+import server from './lib/server.js';
+import connectDB from './lib/database.js';
 const app = express();
 
 
@@ -18,5 +18,5 @@ app.init();
 
 
 // Export this app
-module.exports = app;
+export default app;
 

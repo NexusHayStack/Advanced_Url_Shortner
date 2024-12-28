@@ -1,8 +1,8 @@
-const express = require("express");
-const Users = require('../models/Users');
+import express from "express";
+import Users from '../models/Users.js';
 const router = express.Router();
-const handlers = require("../lib/handlers.js");
-const authMiddleware = require('../middleware/authMiddleware'); // Path to your auth middleware
+import handlers from '../lib/handlers.js';
+import authMiddleware from '../middleware/authMiddleware.js'; // Path to your auth middleware
 
 // Public Route
 router.post("/signup", handlers.createUser);
@@ -15,4 +15,4 @@ router.put("/:id", authMiddleware, handlers.updateUser);
 router.delete("/:id", authMiddleware, handlers.deleteUser);
 
 
-module.exports = router;
+export default router;

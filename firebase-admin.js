@@ -1,28 +1,30 @@
-// **DOTENV IMPORT SHOULD ALWAYS BE AT TOP!!!!
-require('dotenv').config();
-const admin = require('firebase-admin');
+// Ensure DOTENV is loaded first
+import dotenv from "dotenv";
+dotenv.config();
 
-const serviceAccount = require(process.env.FIREBASE_SERVICE_ACCOUNT_KEY); // Replace with your actual path
+import admin from "firebase-admin";
+import fs from "fs";  // Import fs module to read file
+import path from "path"; // Optional: Useful for resolving absolute paths
+
+// Initialize Firebase Admin SDK
+const serviceAccountPath = path.resolve(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
+const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, "utf8"));
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://your-firebase-project-id.firebaseio.com', // Replace with your project ID
 });
 
-// Verify ID Token function to ensure user authentication
-const verifyToken = async (idToken) => {
+// Token Verification Function
+export const verifyToken = async (idToken) => {
   try {
     const decodedToken = await admin.auth().verifyIdToken(idToken);
-    console.log('Decoded Token:', decodedToken); // Contains user info
+    console.log("Decoded Token:", decodedToken);
     return decodedToken;
   } catch (error) {
-    console.error('Error verifying token:', error);
-    throw new Error('Unauthorized');
+    console.error("Error verifying token:", error);
+    throw new Error("Unauthorized");
   }
 };
 
-// Export both `admin` and `verifyToken` properly
-module.exports = {
-  admin,
-  verifyToken,
-};
+// Named Export for `admin`
+export { admin };

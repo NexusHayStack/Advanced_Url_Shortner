@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const UserSchema = new mongoose.Schema({
   firebaseUid: { type: String, required: true, unique: true }, // Google user ID
@@ -8,4 +8,4 @@ const UserSchema = new mongoose.Schema({
   updatedAt: { type: Date, default: Date.now },                // Last update date
 });
 
-module.exports = mongoose.model('User', UserSchema);
+export default mongoose.model('User', UserSchema);
