@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  redis-1:
+    image: redis:alpine
+    container_name: redis-1
+    ports:
+      - "6379:6379"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: advanced_url_shortner-app
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    depends_on:
+      - redis-1
+    environment:
+      REDIS_HOST: redis-1
+      REDIS_PORT: 6379
+      NODE_ENV: development
