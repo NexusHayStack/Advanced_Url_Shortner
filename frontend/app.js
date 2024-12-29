@@ -28,7 +28,7 @@ async function googleSignIn() {
     console.log("ID Token:", idToken);
 
     // Send idToken to backend
-    const response = await fetch("https://localhost:5001/api/user/signup", {
+    const response = await fetch("http://localhost:5000/api/user/signup", {
       method: "POST",
       headers: {
           "Content-Type": "application/json",

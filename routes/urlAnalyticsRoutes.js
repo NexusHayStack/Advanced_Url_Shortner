@@ -7,6 +7,6 @@ router.get('/:alias', authMiddleware, handlers.getAnalyticsByAlias);
 
 router.get('/topic/:topic', authMiddleware, handlers.getAnalyticsByTopic);
 
-
+router.get('/overall', authMiddleware, handlers.getAnalytics);
 
 export default router;

@@ -9,6 +9,7 @@ const UserSchema = new mongoose.Schema({
   uniqueUsers: { type: [String], required: false},             // Number of Clicks by unique users
   uniqueUsersByTopic: [
     {
+      topic: {type: String, required: false},
       users: { type: [String], required: false},
       clicks: { type: Number, default: 0 },
     }
