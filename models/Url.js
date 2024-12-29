@@ -9,6 +9,12 @@ const UrlSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
   totalClicks: { type: Number, required: false},
   uniqueUsers: { type: [String], required: false},
+  clickedByDate: [
+    {
+      date: { type: Date, default: Date.now },
+      clicks: { type: Number, required: false},
+    }
+  ],
   osType: [
     {
       osName: { type: String, required: false }, // Name of the OS
