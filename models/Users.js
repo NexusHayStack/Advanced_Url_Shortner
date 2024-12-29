@@ -7,6 +7,12 @@ const UserSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },                // Account creation date
   updatedAt: { type: Date, default: Date.now },                // Last update date
   uniqueUsers: { type: [String], required: false},             // Number of Clicks by unique users
+  uniqueUsersByTopic: [
+    {
+      users: { type: [String], required: false},
+      clicks: { type: Number, default: 0 },
+    }
+  ],
   osType: [
     {
       osName: { type: String, required: false }, // Name of the OS
