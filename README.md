@@ -1,4 +1,3 @@
-# Advanced_Url_Shortner
 # Advanced URL Shortener
 
 An advanced URL shortening application with features like Google Sign-In, detailed analytics, rate limiting, and secure HTTPS implementation.
