@@ -37,8 +37,8 @@ An advanced URL shortening application with features like Google Sign-In, detail
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/advanced-url-shortener.git
-   cd advanced-url-shortener
+   git clone https://github.com/NexusHayStack/Advanced_Url_Shortner.git
+   cd Advanced_Url_Shortner
    ```
 
 2. Install dependencies:
